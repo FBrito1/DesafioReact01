@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const PostHeader = (props) => {
   const { name, postTime, postAvatar } = props.data.data;
@@ -12,5 +13,14 @@ const PostHeader = (props) => {
     </div>
   );
 };
+
+PostHeader.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string,
+    postTime: PropTypes.string,
+    postAvatar: PropTypes.string,
+  }).isRequired,
+};
+
 
 export default PostHeader;
